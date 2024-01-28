@@ -1,20 +1,18 @@
-"use client";
-import React, { useRef, useState } from "react";
+"use client"
 import "@styles/customs-styles.css";
 
-import firebase, { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 import "firebase/firestore";
 import "firebase/auth";
 import "firebase/analytics";
 
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useCollectionData } from "react-firebase-hooks/firestore";
-import { ChatRoom } from "@components/functions/function-chat-room";
-import { SignIn } from "@components/functions/function-signin";
-import { SignOut } from "@components/functions/function-signout";
+import ChatRoom  from "@components/functions/function-chat-room";
+import  SignIn  from "@components/functions/function-signin";
+import  SignOut  from "@components/functions/function-signout";
 
 const firebaseConfig = {
   appId: "1:454289704797:web:7a9b960cd6657340940ab4",
@@ -32,7 +30,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const firestore = getFirestore(app);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 
 export default function Home() {
   const [user] = useAuthState(auth);

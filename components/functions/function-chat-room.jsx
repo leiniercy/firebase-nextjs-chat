@@ -1,13 +1,13 @@
 "use client";
 import { useRef, useState } from "react";
-import { ChatMessage } from "./function-chat-message";
+import  ChatMessage  from "./function-chat-message";
 import { collection, addDoc } from "firebase/firestore"; 
 import { query, orderBy, limit } from "firebase/firestore"; 
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { serverTimestamp } from "firebase/firestore";
 
 
-export const ChatRoom = ({firestore, auth}) => {
+const ChatRoom = ({firestore, auth}) => {
   
   const dummy = useRef();
   const messagesRef = collection(firestore, "messages");
@@ -56,3 +56,5 @@ export const ChatRoom = ({firestore, auth}) => {
     </>
   );
 };
+
+export default ChatRoom;

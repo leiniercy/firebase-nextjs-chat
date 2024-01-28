@@ -1,6 +1,7 @@
+"use client"
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-export const SignIn = ({ auth }) => {
+ const SignIn = ({ auth }) => {
   const signInWithGoogle = async () => {
     try {
       const provider = new GoogleAuthProvider();
@@ -23,3 +24,5 @@ export const SignIn = ({ auth }) => {
     </>
   );
 };
+
+export default SignIn;

@@ -1,4 +1,5 @@
-export const ChatMessage = ({auth, message}) => {
+"use client"
+const ChatMessage = ({auth, message}) => {
     const { text, uid, photoURL } = message;
   
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
@@ -9,4 +10,6 @@ export const ChatMessage = ({auth, message}) => {
         <p>{text}</p>
       </div>
     </>)
-  }
+}
+
+export default ChatMessage;
